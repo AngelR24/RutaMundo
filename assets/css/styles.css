@@ -191,7 +191,6 @@ img {
 .quick-highlights article,
 .feature-card,
 .filters,
-.status-panel,
 .contact-form,
 .contact-info,
 .service-grid article,
@@ -261,6 +260,13 @@ img {
   padding: 0.8rem 1rem;
   margin-bottom: 1rem;
   color: var(--ink-soft);
+}
+
+#formFeedback {
+  background: var(--surface);
+  border: 1px solid rgba(216, 208, 193, 0.8);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
 }
 
 .status-panel.success {

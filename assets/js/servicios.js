@@ -35,6 +35,23 @@ function getDisplayCurrencyName(country) {
   return localizedCurrencyName || fallbackCurrencyName || currencyKey;
 }
 
+function getDisplayRegionName(region) {
+  const regionMap = {
+    Africa: "África",
+    Americas: "Américas",
+    Asia: "Asia",
+    Europe: "Europa",
+    Oceania: "Oceanía",
+    Antarctic: "Antártida"
+  };
+
+  if (!region) {
+    return "No disponible";
+  }
+
+  return regionMap[region] || region;
+}
+
 function updateLoadMoreState(total) {
   if (!loadMoreBtn) return;
 
@@ -47,16 +64,22 @@ function updateLoadMoreState(total) {
   }
 }
 
+function updateStatus(message, variant = "") {
+  if (!statusPanel) return;
+
+  statusPanel.textContent = message;
+  statusPanel.className = variant ? `status-panel ${variant}` : "status-panel";
+}
+
 function renderCountries(list, append = false) {
-  if (!countriesGrid || !statusPanel) return;
+  if (!countriesGrid) return;
 
   if (!append) {
     countriesGrid.innerHTML = "";
   }
 
   if (!list.length) {
-    statusPanel.textContent = "No se encontraron destinos con ese criterio.";
-    statusPanel.className = "status-panel error";
+    updateStatus("No se encontraron destinos con ese criterio.", "error");
     if (loadMoreBtn) {
       loadMoreBtn.classList.add("hidden");
     }
@@ -67,8 +90,7 @@ function renderCountries(list, append = false) {
   const currentCount = countriesGrid.childElementCount;
   const newItems = itemsToRender.slice(currentCount);
 
-  statusPanel.textContent = `${itemsToRender.length} de ${list.length} destino(s) visibles.`;
-  statusPanel.className = "status-panel success";
+  updateStatus(`${itemsToRender.length} de ${list.length} destino(s) visibles.`, "success");
 
   const fragment = document.createDocumentFragment();
 
@@ -77,6 +99,7 @@ function renderCountries(list, append = false) {
     card.className = "country-card";
 
     const displayCountryName = getDisplayCountryName(country);
+    const displayRegionName = getDisplayRegionName(country.region);
     const currencyName = getDisplayCurrencyName(country);
     const languageKey = country.languages ? Object.keys(country.languages)[0] : null;
     const languageName = languageKey ? country.languages[languageKey] : "No disponible";
@@ -86,7 +109,7 @@ function renderCountries(list, append = false) {
       <div class="content">
         <h3>${displayCountryName}</h3>
         <p><strong>Capital:</strong> ${country.capital?.[0] || "No disponible"}</p>
-        <p><strong>Región:</strong> ${country.region || "No disponible"}</p>
+        <p><strong>Región:</strong> ${displayRegionName}</p>
         <p><strong>Población:</strong> ${formatPopulation(country.population)}</p>
         <p><strong>Moneda:</strong> ${currencyName}</p>
         <p><strong>Idioma:</strong> ${languageName}</p>
@@ -125,11 +148,10 @@ function loadMoreCountries() {
 }
 
 async function loadCountries() {
-  if (!countriesGrid || !statusPanel) return;
+  if (!countriesGrid) return;
 
   try {
-    statusPanel.textContent = "Cargando destinos...";
-    statusPanel.className = "status-panel";
+    updateStatus("Cargando destinos...");
 
     const response = await fetch(
       "https://restcountries.com/v3.1/all?fields=name,translations,capital,region,population,currencies,languages,flags"
@@ -147,8 +169,7 @@ async function loadCountries() {
     visibleCount = Math.min(PAGE_SIZE, filteredCountries.length);
     renderCountries(filteredCountries);
   } catch (error) {
-    statusPanel.textContent = "Error cargando destinos. Intenta nuevamente en unos minutos.";
-    statusPanel.className = "status-panel error";
+    updateStatus("Error cargando destinos. Intenta nuevamente en unos minutos.", "error");
     countriesGrid.innerHTML = "";
     if (loadMoreBtn) {
       loadMoreBtn.classList.add("hidden");
