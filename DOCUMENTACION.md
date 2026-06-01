@@ -1,179 +1,146 @@
-# Documentación del Proyecto Web
+# RESUMEN
 
-## Portada
+RutaMundo es un portal web de viajes orientado a la consulta de información de países y servicios turísticos. El sitio integra contenido estático y consumo de datos en tiempo real por medio de una API externa, permitiendo al usuario buscar destinos, filtrarlos por región y visualizar datos relevantes como capital, población, moneda e idioma. También incluye un formulario de contacto con validaciones del lado del cliente para mejorar la calidad de la interacción.
 
-- Proyecto: RutaMundo
-- Tipo de proyecto: Portal web informativo de viajes
-- Asignatura/Módulo: HTML, CSS y JavaScript
-- Año: 2026
+Palabras clave: desarrollo web, JavaScript, API, turismo, interfaz de usuario.
 
-## Breve descripción del proyecto
+# BREVE DESCRIPCIÓN DEL PROYECTO
 
-RutaMundo es un portal web de viajes que permite explorar información de países y solicitar asesoría de viaje.
-El sitio combina contenido informativo, búsqueda de destinos y un formulario de contacto validado en el navegador.
-Además, integra datos en tiempo real desde REST Countries API para mostrar información actualizada.
+RutaMundo corresponde a un proyecto web informativo centrado en la exploración de destinos internacionales. La solución integra una interfaz moderna, consumo de API pública y formularios validados para fortalecer la experiencia de usuario. El proyecto fue construido con HTML5, CSS3 y JavaScript, manteniendo una organización modular por responsabilidades.
 
-## Objetivos del portal web
+# OBJETIVOS DEL PORTAL WEB
 
-- Presentar una experiencia web clara y moderna para consulta de destinos internacionales.
-- Implementar consumo de un servicio web (API) para mostrar datos reales de países.
-- Permitir búsqueda y filtrado por nombre y región para mejorar la exploración de destinos.
-- Aplicar validaciones de formulario del lado del cliente con retroalimentación visual.
-- Organizar el proyecto con una estructura limpia de archivos HTML, CSS y JavaScript.
+## Objetivo general
 
-## Tipo de sitio desarrollado (informativo, comercial, personal, etc.)
+Desarrollar un portal web informativo de viajes que permita consultar destinos internacionales y gestionar interacciones básicas del usuario mediante tecnologías front-end.
 
-Tipo principal: Informativo con componente de servicios turísticos.
+## Objetivos específicos
 
-### Maquetación (Wireframe)
+1. Presentar una experiencia web clara y moderna para consulta de destinos internacionales.
+2. Implementar consumo de un servicio web para mostrar datos reales y actualizados.
+3. Permitir búsqueda y filtrado de países para facilitar la exploración de destinos.
+4. Aplicar validaciones de formulario en cliente con mensajes de retroalimentación.
+5. Mantener una estructura ordenada de archivos HTML, CSS y JavaScript.
 
-El sitio está organizado en tres vistas principales:
+# TIPO DE SITIO DESARROLLADO
 
-- Inicio:
-  - Encabezado fijo con navegación.
-  - Hero principal con llamada a la acción.
-  - Sección de destacados rápidos.
-  - Sección de características del portal.
-- Destinos y Servicios:
-  - Introducción de la sección.
-  - Panel de filtros (búsqueda y región).
-  - Cuadrícula dinámica de países.
-  - Botón de paginación incremental (cargar más).
-  - Tarjetas de servicios turísticos.
-- Contacto:
-  - Introducción.
-  - Formulario validado.
-  - Panel de información de contacto.
-  - Mensaje de retroalimentación al enviar.
+Tipo de sitio: informativo, con componentes de servicios turísticos.
 
-### Descripción del diseño aplicado (colores, tipografía, distribución)
+## Maquetación (Wireframe)
 
-- Paleta de color:
-  - Fondo claro cálido con degradados y formas radiales.
-  - Color principal: verde representando naturaleza.
-  - Color secundario: naranja para acentuar.
-  - Estados semánticos para éxito (verde) y error (rojo).
-- Tipografía:
-  - Outfit para texto general.
-  - Space Grotesk para títulos.
-- Distribución:
-  - Uso de contenedor central para mantener legibilidad.
-  - Secciones modulares en tarjetas con bordes suaves y sombra.
-  - Rejillas para listas de características, servicios y países.
+La maquetación del sitio se divide en tres vistas principales:
 
-### Uso de CSS (externo, organización del archivo, estilos aplicados)
+1. Inicio: encabezado fijo, sección principal, destacados y características.
+2. Servicios: introducción, filtros de búsqueda, cuadrilla de países y tarjetas de servicios.
+3. Contacto: formulario validado, información de contacto y mensaje de confirmación.
 
-- Se utiliza un archivo externo de estilos: assets/css/styles.css.
-- El archivo concentra:
-  - Variables CSS (tema de color y sombras).
-  - Estilos globales base.
-  - Componentes reutilizables (botones, paneles, tarjetas).
-  - Layout de secciones (hero, filtros, grid de países, contacto).
-  - Transiciones para aparición progresiva de contenido (clase reveal).
+## Descripción del diseño aplicado (colores, tipografía, distribución)
 
-### Funcionalidades implementadas con JavaScript
+El diseño usa una paleta clara con acentos verdes y naranjas para generar contraste visual y jerarquía. Para la tipografía se emplea una fuente para contenido general y otra para títulos, mejorando lectura y estructura visual. La distribución se apoya en contenedores centrales, secciones modulares y rejillas de tarjetas para mantener consistencia entre páginas.
 
-- Animación de entrada por intersección de secciones (IntersectionObserver).
-- Carga de países desde API externa.
-- Búsqueda por nombre de país en tiempo real.
-- Filtro de países por región.
-- Paginación progresiva mediante botón Cargar más países.
-- Localización al español de datos mostrados:
-  - Nombre de país (traducción disponible).
-  - Moneda (DisplayNames con fallback).
-  - Región (mapeo a etiquetas en español).
-- Validación de formulario de contacto con panel de mensajes de error/éxito.
+## Uso de CSS (externo, organización del archivo, estilos aplicados)
 
-#### Integración de servicios (API)
-##### Descripción del servicio web o API utilizada
+Se utiliza una hoja de estilos externa en assets/css/styles.css. En este archivo se centralizan variables de color, estilos base, componentes reutilizables, estilos de secciones y reglas responsive para dispositivos móviles y escritorio.
 
-- API: REST Countries
-- Endpoint usado:
-  - https://restcountries.com/v3.1/all?fields=name,translations,capital,region,population,currencies,languages,flags
-- Datos consumidos:
-  - Nombre, traducciones, capital, región, población, monedas, idiomas y bandera.
+## Funcionalidades implementadas con JavaScript
 
-##### Función que cumple dentro del portal
+1. Animaciones de entrada mediante IntersectionObserver.
+2. Consumo de datos de países usando fetch.
+3. Búsqueda en tiempo real por nombre de país.
+4. Filtro por región.
+5. Paginación incremental con botón de carga adicional.
+6. Validación del formulario de contacto.
 
-La API proporciona la base de datos de países que alimenta dinámicamente la sección de destinos.
-Esto evita hardcodear información y permite mostrar datos reales y actualizables.
+### Integración de servicios (API)
 
-##### Explicación general de cómo se integró
+#### Descripción del servicio web o API utilizada
 
-- Se realiza una solicitud fetch al cargar la página de servicios.
-- La respuesta JSON se ordena alfabéticamente por nombre en español.
-- Los datos se almacenan en caché en memoria para aplicar filtros locales sin nuevas peticiones.
-- Los resultados se renderizan en tarjetas dentro de la cuadrícula.
-- Se controla el estado de carga y errores en la lógica JavaScript, con renderizado directo en la cuadrícula de destinos.
+Se utilizó la API REST Countries con el endpoint:
 
-## Descripción del desarrollo
+https://restcountries.com/v3.1/all?fields=name,translations,capital,region,population,currencies,languages,flags
 
-El desarrollo del portal se realizó por etapas para mantener una implementación ordenada y verificable.
-Primero se construyó la estructura base de navegación y páginas en HTML semántico.
-Después se aplicó el diseño visual en CSS con una identidad coherente (paleta, tipografías y componentes).
-En la fase de JavaScript se incorporaron las interacciones del sitio: animaciones de aparición, consumo de API, filtros y validación de formularios.
-Finalmente, se ejecutaron pruebas funcionales manuales para validar navegación, carga de datos y comportamiento del formulario.
+#### Función que cumple dentro del portal
 
-### Explicación de la estructura del sitio web
+La API suministra la información de países para la sección de destinos. Gracias a ello, el portal muestra contenido real y actualizado sin depender de datos fijos.
 
-La arquitectura del sitio sigue un modelo de separación por responsabilidades:
+#### Explicación general de cómo se integró
 
-- HTML para la estructura y el contenido de cada vista.
-- CSS centralizado para estilos globales y componentes compartidos.
-- JavaScript modular por página para comportamiento específico.
+1. Al abrir la página de servicios, se ejecuta una solicitud HTTP con fetch.
+2. La respuesta JSON se procesa y ordena alfabéticamente.
+3. Los datos se almacenan en memoria para aplicar filtros locales sin nuevas peticiones.
+4. Los resultados se renderizan dinámicamente en tarjetas dentro de la cuadrilla.
+5. Se incluye manejo de errores para fallas de conexión o respuesta.
 
-Esta organización facilita el mantenimiento, porque cada archivo cumple una función concreta y evita mezclar estructura, estilo y lógica en un mismo lugar.
-Además, permite escalar el proyecto agregando nuevas secciones o scripts sin romper el flujo actual.
+# DESCRIPCIÓN DEL DESARROLLO
 
-#### Páginas creadas
+El proyecto se desarrolló por etapas: primero la estructura HTML semántica, luego el diseño CSS y finalmente la lógica JavaScript. Esta secuencia permitió validar cada capa de forma incremental y garantizar una integración estable entre navegación, interfaz y datos.
 
-- index.html (Inicio)
-- servicios.html (Destinos y Servicios)
-- contacto.html (Contacto)
+# EXPLICACIÓN DE LA ESTRUCTURA DEL SITIO WEB
 
-#### Organización de carpetas (HTML, CSS, JS, imágenes)
+## Páginas creadas
 
-- Raíz del proyecto:
-  - index.html
-  - servicios.html
-  - contacto.html
-  - PRUEBAS.txt
-- Carpeta assets:
-  - css/styles.css
-  - js/main.js
-  - js/servicios.js
-  - js/contacto.js
+1. index.html
+2. servicios.html
+3. contacto.html
 
-### Tecnologías utilizadas (HTML, CSS, JavaScript)
+## Organización de carpetas (HTML, CSS, JS, imágenes)
 
-- HTML5 para estructura semántica de páginas.
-- CSS3 para estilos visuales, composición y transiciones.
-- JavaScript (ES6+) para interacción, validación y consumo de API.
+1. Raíz del proyecto: index.html, servicios.html, contacto.html, DOCUMENTACION.md, PRUEBAS.md.
+2. assets/css: styles.css.
+3. assets/js: main.js, servicios.js, contacto.js.
+4. capturas: evidencias visuales del funcionamiento.
 
-## Publicación del sitio web
-### Plataforma utilizada
+## Tecnologías utilizadas (HTML, CSS, JavaScript)
 
-- Repositorio de código: GitHub.
-- Despliegue y hosting: Netlify.
+1. HTML5 para estructura semántica.
+2. CSS3 para diseño visual y adaptación responsive.
+3. JavaScript (ES6+) para interactividad, validaciones y consumo de API.
 
-### Enlace del sitio web publicado
+# PUBLICACIÓN DEL SITIO WEB
 
-- https://cheery-belekoy-cf6c4d.netlify.app/
+## Plataforma utilizada
 
-## Resultados y evidencias
-### Capturas de pantalla del sitio funcionando
+Repositorio de código en GitHub y despliegue en Netlify.
 
- - Las capturas se encuentran en la carpeta de capturas
+## Enlace del sitio web publicado
 
-### Evidencias de pruebas realizadas
+https://cheery-belekoy-cf6c4d.netlify.app/
 
-- Evidencias funcionales registradas en PRUEBAS.txt:
-  - Navegación entre páginas.
-  - Carga de países desde API.
-  - Búsqueda y filtro.
-  - Manejo de error de API.
-  - Validación y envío de formulario.
+# RESULTADOS Y EVIDENCIAS
 
-## Conclusión personal
+## Capturas de pantalla del sitio funcionando
 
-El desarrollo de RutaMundo permitió aplicar de forma práctica HTML, CSS y JavaScript en un proyecto integrado. La incorporación de una API real fortaleció la experiencia del usuario y la calidad del contenido mostrado. El proyecto quedó publicado mediante integración entre GitHub (control de versiones) y Netlify (despliegue).
+Inicio, listado de países y contacto. Las capturas del funcionamiento se encuentran en la carpeta capturas dentro del proyecto.
+
+## Evidencias de pruebas realizadas
+
+1. Navegación entre páginas.
+Resultado: correcta transición entre Inicio, Destinos y Contacto.
+2. Consumo de REST Countries API.
+Resultado: carga de países completada y renderizado de tarjetas.
+3. Búsqueda por nombre.
+Resultado: filtrado en tiempo real según texto ingresado.
+4. Filtro por región.
+Resultado: visualización limitada a región seleccionada.
+5. Manejo de error de API.
+Resultado: mensaje de error mostrado cuando la API no responde.
+6. Validación del formulario.
+Resultado: bloqueo de envío con campos incompletos.
+7. Envío válido del formulario.
+Resultado: mensaje de confirmación al usuario.
+
+Las pruebas funcionales están registradas en PRUEBAS.md.
+
+# CONCLUSIÓN PERSONAL
+
+RutaMundo permitió aplicar de manera práctica los fundamentos de desarrollo web front-end en un caso real. La integración de una API pública fortaleció el valor del contenido y mejoró la experiencia de usuario. El despliegue exitoso confirma la viabilidad técnica del proyecto y su correcta implementación de principio a fin.
+
+# REFERENCIAS
+
+GitHub, Inc. (s. f.). GitHub. Recuperado el 1 de junio de 2026, de https://github.com/
+
+MDN Web Docs. (s. f.). Intersection Observer API. Recuperado el 1 de junio de 2026, de https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+
+Netlify, Inc. (s. f.). Netlify. Recuperado el 1 de junio de 2026, de https://www.netlify.com/
+
+REST Countries. (s. f.). REST Countries API. Recuperado el 1 de junio de 2026, de https://restcountries.com/
