@@ -16,5 +16,3 @@
    - Resultado: bloqueo de envío con campos incompletos.
 7. Envío válido del formulario:
    - Resultado: mensaje de confirmación al usuario.
-
-

@@ -85,7 +85,6 @@ El sitio está organizado en tres vistas principales:
 - Validación de formulario de contacto con panel de mensajes de error/éxito.
 
 #### Integración de servicios (API)
-
 ##### Descripción del servicio web o API utilizada
 
 - API: REST Countries
@@ -152,8 +151,6 @@ Además, permite escalar el proyecto agregando nuevas secciones o scripts sin ro
 - JavaScript (ES6+) para interacción, validación y consumo de API.
 
 ## Publicación del sitio web
-
-
 ### Plataforma utilizada
 
 - Repositorio de código: GitHub.
@@ -163,17 +160,10 @@ Además, permite escalar el proyecto agregando nuevas secciones o scripts sin ro
 
 - https://cheery-belekoy-cf6c4d.netlify.app/
 
-### Enlace del repositorio
-
 ## Resultados y evidencias
-
 ### Capturas de pantalla del sitio funcionando
 
-- Pendiente de adjuntar capturas de:
-  - Página de inicio.
-  - Página de destinos con países cargados.
-  - Filtro por región aplicado.
-  - Formulario de contacto con envío válido.
+ - Las capturas se encuentran en la carpeta de capturas
 
 ### Evidencias de pruebas realizadas
 
@@ -186,7 +176,4 @@ Además, permite escalar el proyecto agregando nuevas secciones o scripts sin ro
 
 ## Conclusión personal
 
-El desarrollo de RutaMundo permitió aplicar de forma práctica HTML, CSS y JavaScript en un proyecto integrado.
-La incorporación de una API real fortaleció la experiencia del usuario y la calidad del contenido mostrado.
-El proyecto quedó publicado mediante integración entre GitHub (control de versiones) y Netlify (despliegue).
-Como mejora futura, se propone agregar más pruebas visuales y ampliar funcionalidades del formulario con envío real a backend.
+El desarrollo de RutaMundo permitió aplicar de forma práctica HTML, CSS y JavaScript en un proyecto integrado. La incorporación de una API real fortaleció la experiencia del usuario y la calidad del contenido mostrado. El proyecto quedó publicado mediante integración entre GitHub (control de versiones) y Netlify (despliegue).
