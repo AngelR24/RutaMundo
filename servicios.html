@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RutaMundo | Destinos y Servicios</title>
+  <meta name="description" content="Busca países y consulta datos para organizar tu viaje." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">RM</span>
+      <span class="brand-text">RutaMundo</span>
+    </a>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Inicio</a>
+      <a class="active" href="servicios.html">Destinos y Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="container page-main">
+    <section class="page-intro reveal">
+      <p class="eyebrow">REST Countries API</p>
+      <h1>Explora destinos internacionales</h1>
+      <p>
+        Busca por país, filtra por región y revisa información útil para tu próximo viaje.
+      </p>
+    </section>
+
+    <section class="filters reveal">
+      <label for="searchCountry">Buscar país</label>
+      <input id="searchCountry" type="text" placeholder="Ej. Colombia, Japón, Canadá" />
+
+      <label for="regionFilter">Filtrar por región</label>
+      <select id="regionFilter">
+        <option value="all">Todas las regiones</option>
+        <option value="Africa">África</option>
+        <option value="Americas">Américas</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europa</option>
+        <option value="Oceania">Oceanía</option>
+      </select>
+    </section>
+
+    <section class="status-panel reveal" id="statusPanel" aria-live="polite">
+      Cargando destinos...
+    </section>
+
+    <section class="countries-grid" id="countriesGrid"></section>
+
+    <div class="load-more-wrap">
+      <button id="loadMoreBtn" class="btn btn-primary" type="button">Cargar más países</button>
+    </div>
+
+    <section class="service-cards reveal">
+      <h2>Servicios del portal</h2>
+      <div class="service-grid">
+        <article>
+          <h3>Paquetes Personalizados</h3>
+          <p>Diseñamos rutas según presupuesto, temporada y tipo de viaje.</p>
+        </article>
+        <article>
+          <h3>Asesoría Migratoria Básica</h3>
+          <p>Guía general sobre requisitos de viaje y documentación habitual.</p>
+        </article>
+        <article>
+          <h3>Experiencias Temáticas</h3>
+          <p>Viajes de aventura, culturales, gastronómicos y familiares.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>RutaMundo © 2026 | Datos de países obtenidos mediante REST Countries API</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/servicios.js"></script>
+</body>
+</html>

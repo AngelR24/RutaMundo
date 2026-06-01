@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RutaMundo | Contacto</title>
+  <meta name="description" content="Formulario de contacto para asesoría de viajes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">RM</span>
+      <span class="brand-text">RutaMundo</span>
+    </a>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Destinos y Servicios</a>
+      <a class="active" href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="container page-main">
+    <section class="page-intro reveal">
+      <p class="eyebrow">¿Listo para viajar?</p>
+      <h1>Cuéntanos tu plan ideal</h1>
+      <p>
+        Completa el formulario y te responderemos con una propuesta inicial.
+      </p>
+    </section>
+
+    <section class="contact-layout reveal">
+      <form id="contactForm" class="contact-form" novalidate>
+        <label for="name">Nombre completo</label>
+        <input id="name" name="name" type="text" required minlength="3" />
+
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="destination">Destino de interés</label>
+        <input id="destination" name="destination" type="text" required minlength="2" />
+
+        <label for="travelType">Tipo de viaje</label>
+        <select id="travelType" name="travelType" required>
+          <option value="">Selecciona una opción</option>
+          <option value="aventura">Aventura</option>
+          <option value="cultural">Cultural</option>
+          <option value="familiar">Familiar</option>
+          <option value="negocios">Negocios</option>
+        </select>
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" required minlength="15"></textarea>
+
+        <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+      </form>
+
+      <aside class="contact-info">
+        <h2>Información de contacto</h2>
+        <p><strong>Email:</strong> asesorias@rutamundo.com</p>
+        <p><strong>Tel:</strong> +1 000 000 0000</p>
+        <p><strong>Horario:</strong> Lunes a viernes, 8:00 a.m. - 6:00 p.m.</p>
+        <p>
+          Nuestro equipo te orienta sobre destinos, temporadas recomendadas
+          y actividades destacadas.
+        </p>
+      </aside>
+    </section>
+
+    <section id="formFeedback" class="status-panel" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>RutaMundo © 2026 | Tu próximo viaje empieza aquí</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contacto.js"></script>
+</body>
+</html>

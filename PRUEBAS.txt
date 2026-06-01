@@ -1,0 +1,20 @@
+# Evidencias de Pruebas - RutaMundo
+
+## Pruebas funcionales
+
+1. Navegación entre páginas:
+   - Resultado: correcta transición entre Inicio, Destinos y Contacto.
+2. Consumo de REST Countries API:
+   - Resultado: carga de países completada y renderizado de tarjetas.
+3. Búsqueda por nombre:
+   - Resultado: filtrado en tiempo real según texto ingresado.
+4. Filtro por región:
+   - Resultado: visualización limitada a región seleccionada.
+5. Manejo de error de API:
+   - Resultado: mensaje de error mostrado cuando la API no responde.
+6. Validación del formulario:
+   - Resultado: bloqueo de envío con campos incompletos.
+7. Envío válido del formulario:
+   - Resultado: mensaje de confirmación al usuario.
+
+
